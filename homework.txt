@@ -1,0 +1,47 @@
+Episode 1:
+verdict = Miss Scarlet
+reason = No attempted changes to the const variables
+
+Episode 2:
+verdict = Assignment error
+reason = const variable is trying to be changed inside changeMurderer function
+
+Episode 3:
+verdict1 = Mrs Peacock
+verdict2 = Professor Plum
+reason = let Murderer is changed inside the declareMurderer block, which is called before logging first verdict.
+Prof Plum is declared at the top of the page therefore second verdict takes that 'murderer' variable's value.
+
+Episode 4:
+verdict = Suspects logged to the console will be Miss Scarlet, Prof Plum, and Colonel Mustard. 
+Suspect Three will be Mrs. Peacock.
+reason = Suspect three (let) is changed inside the declareAllSuspects block, which is assigned to a variable 
+called suspects (which is then logged to the console). Mrs Peacock is still suspect three outwith that block, and 
+so it is her name that is logged to the console when called.
+
+Episode 5:
+verdict = Revolver
+reason = The information inside the const variable can be changed, which changeWeapon does legitimately. So the 
+key value for weapon is changed to revolver.
+
+Episode 6:
+verdict = Mrs White
+reason = The plotTwist() function exists within the changeMurderer block. 
+
+Episode 7:
+verdict = Mr Green
+reason = changeMurderer changes Prof Plum to Mr Green, unexpectedOutcome changes the 'let murderer' variable in PlotTwist,
+whose own block doesn't touch the first murderer variable. (To be honest this is a bit of guess work, my initial thought was
+that it was Colonel Mustard, but after running the test I've tried to suss out why I was wrong, this is the best I could come up with!!) 
+
+Episode 8: 
+verdict = Candlestick
+reason = changeScenario changes room to Dining Room, then plotTwist changes murderer to Colonel Mustard because it 
+takes the argument Dining Room. unexpectedOutcome changes the weapon to Candlestick because it took Colonel Mustard as an argument.
+
+Episode 9: 
+verdict = Professor Plum
+reason = let murderer inside the if statement that changes the murderer exists within its own block, so when 
+declareMurderer is called, it is calling on the initial murderer variable of Prof Plum. 
+
+
